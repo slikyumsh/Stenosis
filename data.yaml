@@ -1,0 +1,5 @@
+train: C:/Users/edimv/Desktop/stenosis/data/train
+val: C:/Users/edimv/Desktop/stenosis/data/val
+
+nc: 2
+names: ['0', 'object']
