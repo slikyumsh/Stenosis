@@ -4,3 +4,7 @@ venv
 dataset
 runs
 yolov8n.pt
+validation
+lab1
+tools/lab1.py
+labelImg
