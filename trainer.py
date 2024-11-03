@@ -3,10 +3,17 @@ from ultralytics import YOLO
 import torch
 from clearml import Task
 import os
+from dotenv import load_dotenv
 
+
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+if os.path.exists(dotenv_path):
+    load_dotenv(dotenv_path)
+
+    
 # Set ClearML configuration programmatically
-os.environ['CLEARML_API_ACCESS_KEY'] = "HOJXSS6CYC2U1TXWOESFB3XT4624E9"
-os.environ['CLEARML_API_SECRET_KEY'] = "BqTgnG9SeBkbQvcKukhuZXmUMuo4Dp7G-sJ_jtzoBI7EEFQDxcsgGNER8rHguU9_OwQ"
+os.environ['CLEARML_API_ACCESS_KEY'] = CLEARML_API_ACCESS_KEY
+os.environ['CLEARML_API_SECRET_KEY'] = CLEARML_API_SECRET_KEY
 os.environ['CLEARML_API_HOST'] = 'https://api.clear.ml'      # Replace with your ClearML API server URL if different
 os.environ['CLEARML_WEB_HOST'] = 'https://app.clear.ml'       # Replace with your ClearML Web server URL if different
 os.environ['CLEARML_FILES_HOST'] = 'https://files.clear.ml'   # Replace with your ClearML Files server URL if different
