@@ -1,5 +1,5 @@
 train: C:/Users/edimv/Desktop/stenosis/data/train
 val: C:/Users/edimv/Desktop/stenosis/data/val
-
-nc: 2
-names: ['0', 'object']
+test: C:/Users/edimv/Desktop/stenosis/data/test
+nc: 1  # Number of classes
+names: ['stenosis']  # Class names
