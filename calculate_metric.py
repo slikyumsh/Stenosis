@@ -13,7 +13,7 @@ import glob
 import cv2
 
 DATA_YAML_PATH = 'C:/Users/edimv/Desktop/stenosis/data.yaml'
-model_path = 'YOLO_Stenosis_Detection/YOLOv8n_training3/weights/best.pt'
+model_path = 'YOLO_Stenosis_Detection/YOLOv8m_training5/weights/best.pt'
 model = YOLO(model_path)
 
 
@@ -76,49 +76,41 @@ def test_iou(test_folder):
     """
     iou_results = []
 
-    # Find all BMP images in the folder
     image_paths = glob.glob(os.path.join(test_folder, "*.bmp"))
 
     for img_path in image_paths:
-        # Annotation file name for the current image
         annotation_path = img_path.replace(".bmp", ".txt")
         
-        # Check if annotation exists
         if not os.path.exists(annotation_path):
             print(f"Annotation missing for {img_path}")
             continue
 
-        # Read image to get its dimensions
         img = cv2.imread(img_path)
         if img is None:
             print(f"Failed to read image {img_path}")
             continue
         img_height, img_width = img.shape[:2]
 
-        # Get model predictions
         results = model(img_path)
         if results[0].boxes is None or len(results[0].boxes) == 0:
             print(f"No predictions for {img_path}")
-            continue  # Skip image if no predictions
+            continue 
 
-        predictions = results[0].boxes.xywh.cpu().numpy()  # Convert predictions to numpy format
+        predictions = results[0].boxes.xywh.cpu().numpy()  
 
-        # Load annotations for the image
         gt_boxes = load_annotations(annotation_path, img_width, img_height)
 
-        # Calculate IoU for each predicted and ground truth box pair
         for pred_box in predictions:
             max_iou = 0
             for gt_box in gt_boxes:
-                # Exclude label from gt_box
-                gt_box_coords = gt_box[1:]  # [x_center, y_center, width, height]
+                gt_box_coords = gt_box[1:] 
                 iou = calculate_iou(pred_box[0:4], gt_box_coords)
                 max_iou = max(max_iou, iou)
             iou_results.append(max_iou)
 
     return iou_results
 
-# Example usage:
+
 if __name__ == '__main__':
     TEST_FOLDER = "data/test"
     iou_results = test_iou(TEST_FOLDER)

@@ -1,10 +1,10 @@
 import cv2
 from ultralytics import YOLO
 
-# Пути к файлам
-image_path = 'data/train/14_003_1_0014.bmp'
-true_boxes_file = 'data/train/14_003_1_0014.txt'  # Истинные координаты (из тренировочных данных)
-model_path = 'runs/detect/train5/weights/best.pt'  # Модель YOLO
+# Пути к файламdata\test\14_002_5_0017.txt
+image_path = 'data/test/14_002_5_0017.bmp'
+true_boxes_file = 'data/test/14_002_5_0017.txt'  # Истинные координаты (из тренировочных данных)
+model_path = 'YOLO_Stenosis_Detection/YOLOv8m_training5/weights/best.pt'  # Модель YOLO
 
 # Загрузка изображения
 image = cv2.imread(image_path)
@@ -51,10 +51,10 @@ for result in results[0].boxes:
     predicted_boxes.append((x1, y1, x2, y2))
 
 # Отрисовка предсказанных боксов (например, зеленым)
-#draw_boxes(image, predicted_boxes, (0, 255, 0), "Predicted")
+draw_boxes(image, predicted_boxes, (0, 255, 0), "Predicted")
 
 # Вместо cv2.imshow(), сохраняем изображение
-output_image_path = 'image_with_bboxes8.jpg'
+output_image_path = 'image_with_bboxes10.jpg'
 cv2.imwrite(output_image_path, image)
 print(f"Изображение сохранено как {output_image_path}")
 

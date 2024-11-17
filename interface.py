@@ -4,7 +4,7 @@ from pathlib import Path
 from ultralytics import YOLO
 
 # Загрузка модели YOLO
-model_path1 = 'runs/detect/train5/weights/best.pt'
+model_path1 = 'YOLO_Stenosis_Detection/YOLOv8m_training5/weights/best.pt'
 model = YOLO(model_path1)
 
 # Путь к папке с видео

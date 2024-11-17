@@ -11,49 +11,42 @@ if os.path.exists(dotenv_path):
     load_dotenv(dotenv_path)
 
     
-# Set ClearML configuration programmatically
-os.environ['CLEARML_API_ACCESS_KEY'] = CLEARML_API_ACCESS_KEY
-os.environ['CLEARML_API_SECRET_KEY'] = CLEARML_API_SECRET_KEY
-os.environ['CLEARML_API_HOST'] = 'https://api.clear.ml'      # Replace with your ClearML API server URL if different
-os.environ['CLEARML_WEB_HOST'] = 'https://app.clear.ml'       # Replace with your ClearML Web server URL if different
-os.environ['CLEARML_FILES_HOST'] = 'https://files.clear.ml'   # Replace with your ClearML Files server URL if different
+os.environ['CLEARML_API_ACCESS_KEY'] = os.environ.get("CLEARML_API_ACCESS_KEY")
+os.environ['CLEARML_API_SECRET_KEY'] = os.environ.get("CLEARML_API_SECRET_KEY")
+os.environ['CLEARML_API_HOST'] = 'https://api.clear.ml'      
+os.environ['CLEARML_WEB_HOST'] = 'https://app.clear.ml'       
+os.environ['CLEARML_FILES_HOST'] = 'https://files.clear.ml'   
 
 
 def main():
-    # Initialize ClearML task
     task = Task.init(project_name='YOLO_Stenosis_Detection', task_name='Training')
 
-    # Paths
     DATA_YAML_PATH = 'C:/Users/edimv/Desktop/stenosis/data.yaml'
-    OUTPUT_DIR = 'C:/Users/edimv/Desktop/stenosis/runs'
 
-    # Choose device (CPU or GPU)
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     print(f'Using device: {device}')
 
-    # Initialize the model
-    model = YOLO('yolov8n.pt')  # Use 'yolov8n.yaml' for training from scratch
+    model = YOLO('yolov8m.pt')
 
-    # Train the model
     model.train(
         data=DATA_YAML_PATH,
-        epochs=35,
-        imgsz=800,  # You can specify (height, width) tuple if needed
-        workers=8,
+        epochs=70,
+        imgsz=800, 
+        workers=12,
+        batch = 16,
         amp=True,
         device=device,
+        auto_augment = None,
         project='YOLO_Stenosis_Detection',
-        name='YOLOv8n_training'
+        name='YOLOv8m_training'
     )
 
-    # Evaluate the model on the validation set
     val_results = model.val(
         data=DATA_YAML_PATH,
         split='val',
         device=device
     )
 
-    # Log validation metrics to ClearML
     task.get_logger().report_scalar(
         title='Validation mAP50',
         series='mAP50',
@@ -66,26 +59,13 @@ def main():
         value=val_results.box.map,
         iteration=0
     )
-    # Log Validation IoU
-    if hasattr(val_results.box, 'iou'):
-        val_iou = val_results.box.iou
-        task.get_logger().report_scalar(
-            title='Validation IoU',
-            series='IoU',
-            value=val_iou,
-            iteration=0
-        )
-    else:
-        print("IoU metric not found in val_results.")
 
-    # Evaluate the model on the test set
     test_results = model.val(
         data=DATA_YAML_PATH,
         split='test',
         device=device
     )
 
-    # Log test metrics to ClearML
     task.get_logger().report_scalar(
         title='Test mAP50',
         series='mAP50',
@@ -98,17 +78,7 @@ def main():
         value=test_results.box.map,
         iteration=0
     )
-    # Log Test IoU
-    if hasattr(test_results.box, 'iou'):
-        test_iou = test_results.box.iou
-        task.get_logger().report_scalar(
-            title='Test IoU',
-            series='IoU',
-            value=test_iou,
-            iteration=0
-        )
-    else:
-        print("IoU metric not found in test_results.")
+   
 
     print('Training and evaluation complete.')
 

@@ -9,3 +9,5 @@ lab1
 tools/lab1.py
 labelImg
 YOLO_Stenosis_Detection
+.env
+yolov8m.pt
