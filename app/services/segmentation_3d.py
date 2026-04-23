@@ -131,7 +131,7 @@ def _geometry_stats(mask: np.ndarray, pixel_spacing_mm: float) -> tuple[np.ndarr
     min_diameter = float(centerline_diameters.min())
     mean_diameter = float(centerline_diameters.mean())
     max_diameter = float(centerline_diameters.max())
-    ratio = (min_diameter / max_diameter) * 100.0 if max_diameter > 0 else 0.0
+    ratio = (min_diameter / mean_diameter) * 100.0 if mean_diameter > 0 else 0.0
     ratio = max(0.0, min(100.0, ratio))
 
     stats = {

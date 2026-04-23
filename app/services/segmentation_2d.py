@@ -51,8 +51,11 @@ def global_vessel_stats(mask: np.ndarray, pixel_spacing_mm: float) -> dict:
         return {
             "mask_area_px": 0,
             "mask_area_mm2": 0.0,
+            "min_diameter_mm": 0.0,
             "mean_diameter_mm": 0.0,
             "max_diameter_mm": 0.0,
+            "stenosis_ratio_percent": 0.0,
+            "stenosis_narrowing_percent": 0.0,
         }
 
     edt = distance_transform_edt(mask.astype(bool)) * float(pixel_spacing_mm)
@@ -61,9 +64,18 @@ def global_vessel_stats(mask: np.ndarray, pixel_spacing_mm: float) -> dict:
     if diameters.size == 0:
         diameters = np.array([0.0], dtype=np.float32)
 
+    min_diameter = float(diameters.min())
+    mean_diameter = float(diameters.mean())
+    max_diameter = float(diameters.max())
+    ratio = (min_diameter / mean_diameter) * 100.0 if mean_diameter > 0 else 0.0
+    ratio = max(0.0, min(100.0, ratio))
+
     return {
         "mask_area_px": int(mask.sum()),
         "mask_area_mm2": round(float(mask.sum() * pixel_spacing_mm * pixel_spacing_mm), 2),
-        "mean_diameter_mm": round(float(diameters.mean()), 2),
-        "max_diameter_mm": round(float(diameters.max()), 2),
+        "min_diameter_mm": round(min_diameter, 2),
+        "mean_diameter_mm": round(mean_diameter, 2),
+        "max_diameter_mm": round(max_diameter, 2),
+        "stenosis_ratio_percent": round(ratio, 2),
+        "stenosis_narrowing_percent": round(100.0 - ratio, 2),
     }

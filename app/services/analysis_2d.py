@@ -9,13 +9,13 @@ def _round_metric(value: float, digits: int = 2) -> float:
     return round(float(value), digits)
 
 
-def _stenosis_percentages(min_diameter_mm: float, max_diameter_mm: float) -> dict:
-    if max_diameter_mm <= 0:
+def _stenosis_percentages(min_diameter_mm: float, mean_diameter_mm: float) -> dict:
+    if mean_diameter_mm <= 0:
         return {
             "stenosis_ratio_percent": 0.0,
             "stenosis_narrowing_percent": 0.0,
         }
-    ratio = (min_diameter_mm / max_diameter_mm) * 100.0
+    ratio = (min_diameter_mm / mean_diameter_mm) * 100.0
     ratio = max(0.0, min(100.0, ratio))
     return {
         "stenosis_ratio_percent": _round_metric(ratio),
@@ -74,5 +74,5 @@ def local_vessel_stats(mask: np.ndarray, box: dict, pixel_spacing_mm: float) -> 
         "local_min_diameter_mm": _round_metric(min_diameter),
         "local_mean_diameter_mm": _round_metric(mean_diameter),
         "local_max_diameter_mm": _round_metric(max_diameter),
-        **_stenosis_percentages(min_diameter, max_diameter),
+        **_stenosis_percentages(min_diameter, mean_diameter),
     }

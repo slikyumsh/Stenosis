@@ -160,9 +160,10 @@ function render2dResult(targetId, payload) {
     buildMetric("Drift level", payload.drift?.level || "n/a"),
     buildMetric("Drift score", formatValue(payload.drift?.combined_score)),
     buildMetric("Mask area, mm2", formatValue(payload.segmentation?.mask_area_mm2, 2)),
+    buildMetric("Min diameter, mm", formatValue(payload.segmentation?.min_diameter_mm, 2)),
     buildMetric("Mean diameter, mm", formatValue(payload.segmentation?.mean_diameter_mm, 2)),
     buildMetric("Max diameter, mm", formatValue(payload.segmentation?.max_diameter_mm, 2)),
-    buildMetric("Ratio min / max, %", formatValue(payload.segmentation?.stenosis_ratio_percent, 2)),
+    buildMetric("Ratio min / mean, %", formatValue(payload.segmentation?.stenosis_ratio_percent, 2)),
     buildMetric("Narrowing, %", formatValue(payload.segmentation?.stenosis_narrowing_percent, 2)),
   );
 
@@ -206,7 +207,7 @@ function render3dResult(targetId, payload) {
     buildMetric("Min diameter, mm", formatValue(payload.geometry?.min_diameter_mm, 2)),
     buildMetric("Max diameter, mm", formatValue(payload.geometry?.max_diameter_mm, 2)),
     buildMetric("Mean diameter, mm", formatValue(payload.geometry?.mean_diameter_mm, 2)),
-    buildMetric("Ratio min / max, %", formatValue(payload.geometry?.stenosis_ratio_percent, 2)),
+    buildMetric("Ratio min / mean, %", formatValue(payload.geometry?.stenosis_ratio_percent, 2)),
     buildMetric("Narrowing, %", formatValue(payload.geometry?.stenosis_narrowing_percent, 2)),
   );
 
