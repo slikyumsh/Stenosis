@@ -1,0 +1,3343 @@
+{
+  "target_url": "http://localhost:8000/api/v1/analyze/2d",
+  "image": "C:\\Users\\edimv\\Desktop\\stenosis\\data\\train\\14_002_5_0016.bmp",
+  "requests_per_scenario": 8,
+  "scenarios": [
+    {
+      "summary": {
+        "rps": 2.0,
+        "requests": 8,
+        "ok_requests": 8,
+        "failed_requests": 0,
+        "mean_response_seconds": 1.498,
+        "min_response_seconds": 1.227,
+        "max_response_seconds": 1.656,
+        "status_codes": [
+          200
+        ]
+      },
+      "samples": [
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.368559499969706,
+          "payload": {
+            "job_id": "2d-c8578d20aab1",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-c8578d20aab1.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.17456752200087067
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-c8578d20aab1/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-c8578d20aab1/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-c8578d20aab1/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-c8578d20aab1/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.5648242000024766,
+          "payload": {
+            "job_id": "2d-02c1d745804e",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-02c1d745804e.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.3211885880009504
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-02c1d745804e/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-02c1d745804e/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-02c1d745804e/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-02c1d745804e/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.2271498000482097,
+          "payload": {
+            "job_id": "2d-0113f3ef5956",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-0113f3ef5956.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.1577309360000072
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-0113f3ef5956/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-0113f3ef5956/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-0113f3ef5956/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-0113f3ef5956/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.5016177999787033,
+          "payload": {
+            "job_id": "2d-dd23b02a0349",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-dd23b02a0349.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.2013938179879915
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-dd23b02a0349/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-dd23b02a0349/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-dd23b02a0349/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-dd23b02a0349/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.6030457000015303,
+          "payload": {
+            "job_id": "2d-69f6f2ffd489",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-69f6f2ffd489.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.19290898100007325
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-69f6f2ffd489/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-69f6f2ffd489/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-69f6f2ffd489/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-69f6f2ffd489/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.4200509999645874,
+          "payload": {
+            "job_id": "2d-c8fb7eb5ea9f",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-c8fb7eb5ea9f.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.16508751599758398
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-c8fb7eb5ea9f/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-c8fb7eb5ea9f/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-c8fb7eb5ea9f/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-c8fb7eb5ea9f/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.6559060000581667,
+          "payload": {
+            "job_id": "2d-1086fbfbd705",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-1086fbfbd705.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.19102044000464957
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-1086fbfbd705/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-1086fbfbd705/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-1086fbfbd705/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-1086fbfbd705/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.6402192000532523,
+          "payload": {
+            "job_id": "2d-782fdd9a19ae",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-782fdd9a19ae.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.16711123600543942
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-782fdd9a19ae/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-782fdd9a19ae/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-782fdd9a19ae/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-782fdd9a19ae/detection_overlay.png"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "summary": {
+        "rps": 4.0,
+        "requests": 8,
+        "ok_requests": 8,
+        "failed_requests": 0,
+        "mean_response_seconds": 1.46,
+        "min_response_seconds": 1.344,
+        "max_response_seconds": 1.666,
+        "status_codes": [
+          200
+        ]
+      },
+      "samples": [
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.344043800025247,
+          "payload": {
+            "job_id": "2d-167239b36be4",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-167239b36be4.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.17899456899613142
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-167239b36be4/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-167239b36be4/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-167239b36be4/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-167239b36be4/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.502540500019677,
+          "payload": {
+            "job_id": "2d-f220603b0b95",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-f220603b0b95.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.2417901669978164
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-f220603b0b95/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-f220603b0b95/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-f220603b0b95/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-f220603b0b95/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.3705337999854237,
+          "payload": {
+            "job_id": "2d-f55c7c278b92",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-f55c7c278b92.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.18662001000484452
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-f55c7c278b92/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-f55c7c278b92/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-f55c7c278b92/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-f55c7c278b92/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.4627049999544397,
+          "payload": {
+            "job_id": "2d-1f7631c8afd4",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-1f7631c8afd4.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.22157049900852144
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-1f7631c8afd4/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-1f7631c8afd4/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-1f7631c8afd4/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-1f7631c8afd4/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.6659496000502259,
+          "payload": {
+            "job_id": "2d-470f4ce9f5e9",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-470f4ce9f5e9.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.19124332899809815
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-470f4ce9f5e9/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-470f4ce9f5e9/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-470f4ce9f5e9/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-470f4ce9f5e9/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.5452197999693453,
+          "payload": {
+            "job_id": "2d-cf242e654bed",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-cf242e654bed.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.3420707849872997
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-cf242e654bed/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-cf242e654bed/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-cf242e654bed/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-cf242e654bed/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.4351062999339774,
+          "payload": {
+            "job_id": "2d-c810cd98d973",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-c810cd98d973.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.27339095500065014
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-c810cd98d973/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-c810cd98d973/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-c810cd98d973/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-c810cd98d973/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.3505588000407442,
+          "payload": {
+            "job_id": "2d-10ee67c731e8",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-10ee67c731e8.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.2198081300011836
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-10ee67c731e8/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-10ee67c731e8/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-10ee67c731e8/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-10ee67c731e8/detection_overlay.png"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "summary": {
+        "rps": 6.0,
+        "requests": 8,
+        "ok_requests": 8,
+        "failed_requests": 0,
+        "mean_response_seconds": 1.515,
+        "min_response_seconds": 1.466,
+        "max_response_seconds": 1.561,
+        "status_codes": [
+          200
+        ]
+      },
+      "samples": [
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.4795306000160053,
+          "payload": {
+            "job_id": "2d-82276550ce0c",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-82276550ce0c.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.18915907299378887
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-82276550ce0c/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-82276550ce0c/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-82276550ce0c/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-82276550ce0c/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.5523435999639332,
+          "payload": {
+            "job_id": "2d-f2b7d7253606",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-f2b7d7253606.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.24425194998912048
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-f2b7d7253606/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-f2b7d7253606/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-f2b7d7253606/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-f2b7d7253606/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.465687399962917,
+          "payload": {
+            "job_id": "2d-4b12c56ccfc2",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-4b12c56ccfc2.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.254838649998419
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-4b12c56ccfc2/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-4b12c56ccfc2/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-4b12c56ccfc2/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-4b12c56ccfc2/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.5481641000369564,
+          "payload": {
+            "job_id": "2d-830d572155b6",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-830d572155b6.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.25370603599003516
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-830d572155b6/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-830d572155b6/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-830d572155b6/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-830d572155b6/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.468179199961014,
+          "payload": {
+            "job_id": "2d-238af566d9e8",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-238af566d9e8.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.293639459006954
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-238af566d9e8/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-238af566d9e8/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-238af566d9e8/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-238af566d9e8/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.5450221000937745,
+          "payload": {
+            "job_id": "2d-ca079ab0aab1",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-ca079ab0aab1.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.2821068510093028
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-ca079ab0aab1/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-ca079ab0aab1/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-ca079ab0aab1/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-ca079ab0aab1/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.560783899971284,
+          "payload": {
+            "job_id": "2d-cdba4c21857a",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-cdba4c21857a.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.30928450101055205
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-cdba4c21857a/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-cdba4c21857a/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-cdba4c21857a/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-cdba4c21857a/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.4979595999466255,
+          "payload": {
+            "job_id": "2d-6aff321e6e73",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-6aff321e6e73.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.3519349389971467
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-6aff321e6e73/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-6aff321e6e73/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-6aff321e6e73/segmentation_overlay.png"
+            },
+            "drift": {
+              "reference_sample_count": 12,
+              "custom_score": 0.1952,
+              "academic_score": 0.0542,
+              "combined_score": 0.1247,
+              "custom_level": "normal",
+              "academic_level": "normal",
+              "level": "normal",
+              "thresholds": {
+                "custom_normal_lt": 0.35,
+                "custom_warning_lt": 0.65,
+                "custom_critical_gte": 0.65
+              },
+              "methods": {
+                "brightness_shift": {
+                  "description": "Mean grayscale intensity shift.",
+                  "feature_name": "mean_intensity",
+                  "current_value": 112.1999,
+                  "reference_mean": 110.4314,
+                  "reference_std": 2.0922,
+                  "score": 0.0534
+                },
+                "contrast_shift": {
+                  "description": "Intensity spread shift.",
+                  "feature_name": "std_intensity",
+                  "current_value": 52.9533,
+                  "reference_mean": 53.5559,
+                  "reference_std": 1.3276,
+                  "score": 0.0375
+                },
+                "texture_entropy_shift": {
+                  "description": "Histogram entropy shift.",
+                  "feature_name": "entropy",
+                  "current_value": 4.0997,
+                  "reference_mean": 4.079,
+                  "reference_std": 0.0607,
+                  "score": 0.0169
+                },
+                "vessel_coverage_shift": {
+                  "description": "Segmented vessel coverage shift.",
+                  "feature_name": "vessel_coverage_ratio",
+                  "current_value": 0.0923,
+                  "reference_mean": 0.0439,
+                  "reference_std": 0.0244,
+                  "score": 0.6619
+                },
+                "detection_density_shift": {
+                  "description": "Detected bbox area ratio shift.",
+                  "feature_name": "bbox_coverage_ratio",
+                  "current_value": 0.0,
+                  "reference_mean": 0.0005,
+                  "reference_std": 0.0006,
+                  "score": 0.1667
+                },
+                "detection_confidence_shift": {
+                  "description": "Mean detector confidence shift.",
+                  "feature_name": "mean_confidence",
+                  "current_value": 0.0,
+                  "reference_mean": 0.2262,
+                  "reference_std": 0.3213,
+                  "score": 0.2347
+                }
+              },
+              "academic_metrics": {
+                "intensity_distribution": {
+                  "description": "Distributional drift on grayscale histogram.",
+                  "bins": 32,
+                  "population_stability_index": {
+                    "value": 0.0023,
+                    "warning_gte": 0.1,
+                    "critical_gte": 0.25,
+                    "level": "normal"
+                  },
+                  "jensen_shannon_divergence": {
+                    "value": 0.0004,
+                    "warning_gte": 0.02,
+                    "critical_gte": 0.05,
+                    "level": "normal"
+                  },
+                  "wasserstein_distance": {
+                    "value": 1.7393,
+                    "warning_gte": 6.0,
+                    "critical_gte": 12.0,
+                    "level": "normal",
+                    "unit": "intensity_levels"
+                  }
+                }
+              },
+              "current_features": {
+                "mean_intensity": 112.1999,
+                "std_intensity": 52.9533,
+                "entropy": 4.0997,
+                "vessel_coverage_ratio": 0.0923,
+                "detection_count": 0.0,
+                "mean_confidence": 0.0,
+                "bbox_coverage_ratio": 0.0
+              },
+              "reference_examples": [
+                "/app/data/train/14_002_5_0016.bmp",
+                "/app/data/train/14_002_5_0016_rotated_0.bmp",
+                "/app/data/train/14_002_5_0016_rotated_1.bmp",
+                "/app/data/train/14_002_5_0018.bmp",
+                "/app/data/train/14_002_5_0018_rotated_0.bmp"
+              ]
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-6aff321e6e73/detection_overlay.png"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

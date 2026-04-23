@@ -2,8 +2,8 @@ import cv2
 from ultralytics import YOLO
 
 # Пути к файламdata\test\14_002_5_0017.txt
-image_path = 'data/test/14_002_5_0017.bmp'
-true_boxes_file = 'data/test/14_002_5_0017.txt'  # Истинные координаты (из тренировочных данных)
+image_path = 'data/train/14_002_5_0031.bmp'
+true_boxes_file = 'data/train/14_002_5_0031.txt'  # Истинные координаты (из тренировочных данных)
 model_path = 'YOLO_Stenosis_Detection/YOLOv8m_training5/weights/best.pt'  # Модель YOLO
 
 # Загрузка изображения
@@ -36,7 +36,10 @@ def draw_boxes(image, boxes, color, label):
     for box in boxes:
         x1, y1, x2, y2 = box
         cv2.rectangle(image, (x1, y1), (x2, y2), color, 2)
-        cv2.putText(image, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+        if label == 'True':
+            cv2.putText(image, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+        else:
+            cv2.putText(image, label, (x1, y1 + 45), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
 # Отрисовка истинных боксов (например, красным)
 draw_boxes(image, true_boxes, (0, 0, 255), "True")

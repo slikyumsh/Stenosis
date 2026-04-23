@@ -1,0 +1,47 @@
+Список литературы
+
+Объединенный список литературы, составленный на основе списков источников из двух научных статей.
+
+1. Aleksandric, S., Banovic, M., Beleslin, B. Challenges in diagnosis and functional assessment of coronary artery disease in patients with severe aortic stenosis. Frontiers in Cardiovascular Medicine. 9 (2022). https://doi.org/10.3389/fcvm.2022.849032
+
+2. Danilov, V.V., Klyshnikov, K.Y., Gerget, O.M., Kutikhin, A.G., Ganyukov, V.I., Frangi, A.F., Ovcharenko, E.A. Real-time coronary artery stenosis detection based on modern neural networks. Scientific Reports. 11(1) (2021). https://doi.org/10.1038/s41598-021-87174-2
+
+3. Dundas, J., Leipsic, J.A., Sellers, S., Blanke, P., Miranda, P., Ng, N., Mullen, S., Meier, D., Akodad, M., Sathananthan, J., Collet, C., de Bruyne, B., Muller, O., Tzimas, G. Artificial intelligence-based coronary stenosis quantification at coronary CT angiography versus quantitative coronary angiography. Radiology: Cardiothoracic Imaging. 5(6) (2023). https://doi.org/10.1148/ryct.230124
+
+4. Jie, P., Fan, M., Zhang, H., Wang, O., Lv, J., Liu, Y., Zhang, C., Liu, Y., Zhao, J. Diagnostic value of artificial intelligence-assisted CTA for the assessment of atherosclerosis plaque: a systematic review and meta-analysis. Frontiers in Cardiovascular Medicine. 11 (2024). https://doi.org/10.3389/fcvm.2024.1398963
+
+5. Li, Y., Wu, Y., He, J., Jiang, W., Wang, J., Peng, Y., Jia, Y., Xiong, T., Jia, K., Yi, Z., Chen, M. Automatic coronary artery segmentation and diagnosis of stenosis by deep learning based on computed tomographic coronary angiography. European Radiology. 32(9), 6037-6045 (2022). https://doi.org/10.1007/s00330-022-08761-z
+
+6. Popov, M., Amanturdieva, A., Zhaksylyk, N., Alkanov, A., Saniyazbekov, A., Aimyshev, T., Ismailov, E., Bulegenov, A., Kolesnikov, A., Kulanbayeva, A., Kuzhukeyev, A., Sakhov, O., Kalzhanov, A., Temenov, N., Fazli, S. ARCADE: Automatic region-based coronary artery disease diagnostics using x-ray angiography images dataset (2023). https://doi.org/10.5281/ZENODO.8386059
+
+7. Serrano-Anton, B., Otero-Cacho, A., Lopez-Otero, D., Diaz-Fernandez, B., Bastos-Fernandez, M., Massonis, G., Pendon, S., Perez-Munuzuri, V., Gonzalez-Juanatey, J.R., Munuzuri, A.P. Optimal Coronary Artery Segmentation Based on Transfer Learning and UNet Architecture. Pp. 55-64 (2023). https://doi.org/10.1007/978-3-031-46914-5_5
+
+8. Zhang, X., Zhang, B., Zhang, F. Stenosis detection and quantification of coronary artery using machine learning and deep learning. Angiology. 75(5), 405-416 (2023). https://doi.org/10.1177/00033197231187063
+
+9. Zheng, J., Heidenreich, P.A., Kohsaka, S., Fearon, W.F., Sandhu, A.T. Long-term outcomes of early coronary artery disease testing after new-onset heart failure. Circulation: Heart Failure. 16(7) (2023). https://doi.org/10.1161/CIRCHEARTFAILURE.122.010426
+
+10. Evtyukhov, D., Kopanitsa, G., Metsker, O., Mogilevskii, A., Yakovlev, A., Kovalchuk, S. Automatic Detection and Segmentation of Coronary Artery Stenosis in Coronary Angiography Images. In: Computational Science - ICCS 2025 Workshops. Lecture Notes in Computer Science, vol. 15908, pp. 128-140. Springer, Cham (2025).
+
+11. Zeng, X., et al. ImageCAS: A Large-Scale Dataset and Benchmark for Coronary Artery Segmentation Based on CT Angiography. arXiv preprint arXiv:2211.01607 (2022).
+
+12. Cardoso, M.J., et al. MONAI: An Open-Source Framework for Deep Learning in Healthcare. arXiv preprint arXiv:2211.02701 (2022).
+
+13. Cicek, O., Abdulkadir, A., Lienkamp, S.S., Brox, T., Ronneberger, O. 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation. In: MICCAI (2016).
+
+14. Milletari, F., Navab, N., Ahmadi, S.-A. V-Net: Fully Convolutional Neural Networks for Volumetric Medical Image Segmentation. In: 3DV (2016).
+
+15. Isensee, F., Jaeger, P.F., Kohl, S.A.A., Petersen, J., Maier-Hein, K.H. nnU-Net: A Self-Configuring Method for Deep Learning-Based Biomedical Image Segmentation. Nature Methods. 18, 203-211 (2021).
+
+16. Myronenko, A. 3D MRI Brain Tumor Segmentation Using Autoencoder Regularization. arXiv preprint arXiv:1810.11654 (2018).
+
+17. Hatamizadeh, A., et al. Swin UNETR: Swin Transformers for Semantic Segmentation of Brain Tumors in MRI Images. arXiv preprint arXiv:2201.01266 (2022).
+
+18. Lee, T.-C., Kashyap, R.L., Chu, C.-N. Building Skeleton Models via 3-D Medial Surface/Axis Thinning Algorithms. CVGIP: Graphical Models and Image Processing. 56(6), 462-478 (1994).
+
+19. Maurer, C.R., Qi, R., Raghavan, V. A Linear Time Algorithm for Computing Exact Euclidean Distance Transforms of Binary Images in Arbitrary Dimensions. IEEE Transactions on Pattern Analysis and Machine Intelligence. 25(2), 265-270 (2003).
+
+20. Jocher, G., Chaurasia, A., Qiu, J. Ultralytics YOLOv8 (software) (2023). Available: https://docs.ultralytics.com/models/yolov8/
+
+21. Dice, L.R. Measures of the Amount of Ecologic Association Between Species. Ecology. 26(3), 297-302 (1945).
+
+22. Sorensen, T. A Method of Establishing Groups of Equal Amplitude in Plant Sociology Based on Similarity of Species Content. Biologiske Skrifter. 5, 1-34 (1948).

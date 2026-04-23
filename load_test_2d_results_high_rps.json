@@ -1,0 +1,551 @@
+{
+  "target_url": "http://localhost:8000/api/v1/analyze/2d",
+  "image": "C:\\Users\\edimv\\Desktop\\stenosis\\data\\train\\14_002_5_0016.bmp",
+  "requests_per_scenario": 8,
+  "scenarios": [
+    {
+      "summary": {
+        "rps": 2.0,
+        "requests": 8,
+        "ok_requests": 8,
+        "failed_requests": 0,
+        "mean_response_seconds": 1.409,
+        "min_response_seconds": 1.307,
+        "max_response_seconds": 1.617,
+        "status_codes": [
+          200
+        ]
+      },
+      "samples": [
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.3442003999371082,
+          "payload": {
+            "job_id": "2d-b1ef33d6a4db",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-b1ef33d6a4db.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.17508823999378365
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-b1ef33d6a4db/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-b1ef33d6a4db/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-b1ef33d6a4db/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-b1ef33d6a4db/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.353778599994257,
+          "payload": {
+            "job_id": "2d-e66d8b302af1",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-e66d8b302af1.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.1635955079982523
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-e66d8b302af1/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-e66d8b302af1/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-e66d8b302af1/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-e66d8b302af1/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.3363167999777943,
+          "payload": {
+            "job_id": "2d-5f7956f47264",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-5f7956f47264.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.23267300800944213
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-5f7956f47264/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-5f7956f47264/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-5f7956f47264/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-5f7956f47264/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.4076201999559999,
+          "payload": {
+            "job_id": "2d-ef3b824df0fd",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-ef3b824df0fd.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.1867568250017939
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-ef3b824df0fd/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-ef3b824df0fd/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-ef3b824df0fd/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-ef3b824df0fd/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.3074789000675082,
+          "payload": {
+            "job_id": "2d-aa1e8134aaca",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-aa1e8134aaca.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.18851606399402954
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-aa1e8134aaca/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-aa1e8134aaca/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-aa1e8134aaca/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-aa1e8134aaca/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.5505603000055999,
+          "payload": {
+            "job_id": "2d-7fc49c9c1081",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-7fc49c9c1081.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.20674704200064298
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-7fc49c9c1081/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-7fc49c9c1081/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-7fc49c9c1081/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-7fc49c9c1081/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.3589001999935135,
+          "payload": {
+            "job_id": "2d-b2aeea37fef9",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-b2aeea37fef9.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.1834003280091565
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-b2aeea37fef9/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-b2aeea37fef9/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-b2aeea37fef9/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-b2aeea37fef9/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.6167336999205872,
+          "payload": {
+            "job_id": "2d-298dbccdfcfb",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-298dbccdfcfb.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.21110021299682558
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-298dbccdfcfb/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-298dbccdfcfb/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-298dbccdfcfb/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-298dbccdfcfb/detection_overlay.png"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "summary": {
+        "rps": 4.0,
+        "requests": 8,
+        "ok_requests": 8,
+        "failed_requests": 0,
+        "mean_response_seconds": 1.445,
+        "min_response_seconds": 1.307,
+        "max_response_seconds": 1.64,
+        "status_codes": [
+          200
+        ]
+      },
+      "samples": [
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.5167952000629157,
+          "payload": {
+            "job_id": "2d-24efd28fd055",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-24efd28fd055.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.18265199298912194
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-24efd28fd055/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-24efd28fd055/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-24efd28fd055/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-24efd28fd055/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.3597854000981897,
+          "payload": {
+            "job_id": "2d-644c9f0cc922",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-644c9f0cc922.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.1624611970037222
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-644c9f0cc922/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-644c9f0cc922/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-644c9f0cc922/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-644c9f0cc922/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.6400821000570431,
+          "payload": {
+            "job_id": "2d-2b57597004e1",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-2b57597004e1.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.1752198629983468
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-2b57597004e1/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-2b57597004e1/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-2b57597004e1/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-2b57597004e1/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.315661699976772,
+          "payload": {
+            "job_id": "2d-9901d372baa1",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-9901d372baa1.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.17816148599376902
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-9901d372baa1/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-9901d372baa1/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-9901d372baa1/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-9901d372baa1/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.3954477000515908,
+          "payload": {
+            "job_id": "2d-afcdf112165d",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-afcdf112165d.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.19459061798988841
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-afcdf112165d/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-afcdf112165d/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-afcdf112165d/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-afcdf112165d/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.5092149999691173,
+          "payload": {
+            "job_id": "2d-ca4afbf335b6",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-ca4afbf335b6.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.18621286100824364
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-ca4afbf335b6/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-ca4afbf335b6/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-ca4afbf335b6/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-ca4afbf335b6/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.5175934999715537,
+          "payload": {
+            "job_id": "2d-f38b4b579178",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-f38b4b579178.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.1744817409926327
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-f38b4b579178/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-f38b4b579178/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-f38b4b579178/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-f38b4b579178/detection_overlay.png"
+            }
+          }
+        },
+        {
+          "status_code": 200,
+          "elapsed_seconds": 1.30734429997392,
+          "payload": {
+            "job_id": "2d-28f3e89a754b",
+            "job_type": "analyze_2d",
+            "status": "completed",
+            "pixel_spacing_mm": 1.0,
+            "input": {
+              "filename": "14_002_5_0016.bmp",
+              "image_url": "/files/uploads/2d/2d-28f3e89a754b.bmp"
+            },
+            "detection": {
+              "image_width": 800,
+              "image_height": 800,
+              "boxes": [],
+              "inference_seconds": 0.22384770700591616
+            },
+            "segmentation": {
+              "mask_area_px": 59103,
+              "mask_area_mm2": 59103.0,
+              "mean_diameter_mm": 3.57,
+              "max_diameter_mm": 16.49,
+              "mask_url": "/files/results/2d/2d-28f3e89a754b/vessel_mask.png",
+              "mask_render_url": "/files/results/2d/2d-28f3e89a754b/vessel_mask_render.png",
+              "overlay_url": "/files/results/2d/2d-28f3e89a754b/segmentation_overlay.png"
+            },
+            "artifacts": {
+              "detection_overlay_url": "/files/results/2d/2d-28f3e89a754b/detection_overlay.png"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

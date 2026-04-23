@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stenosis Local App</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Coronary Analysis</p>
+        <h1>Local stenosis analysis bench</h1>
+        <p class="lead">
+          FastAPI + Kafka + Docker. Local file storage, 2D detection,
+          2D segmentation, custom drift checks, async 3D analysis and monitoring.
+        </p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>2D analysis</h2>
+          <form id="form-2d">
+            <label>
+              Image
+              <input type="file" name="file" accept=".bmp,.png,.jpg,.jpeg" required />
+            </label>
+            <label>
+              Pixel spacing, mm
+              <input type="number" name="pixel_spacing_mm" value="1.0" step="0.01" min="0.01" />
+            </label>
+            <label>
+              Confidence threshold
+              <input type="number" name="confidence_threshold" value="0.25" step="0.01" min="0.01" max="1" />
+            </label>
+            <label class="toggle">
+              <input type="checkbox" name="render_artifacts" checked />
+              <span class="toggle-control"></span>
+              <span class="toggle-text">Save rendered artifacts</span>
+            </label>
+            <button type="submit">Run 2D analysis</button>
+          </form>
+          <div id="result-2d" class="result-panel"></div>
+          <div id="gallery-2d" class="gallery"></div>
+        </article>
+
+        <article class="card">
+          <h2>3D analysis</h2>
+          <form id="form-3d">
+            <label>
+              Volume
+              <input type="file" name="file" accept=".nii,.nii.gz" required />
+            </label>
+            <label>
+              Pixel spacing, mm
+              <input type="number" name="pixel_spacing_mm" value="1.0" step="0.01" min="0.01" />
+            </label>
+            <button type="submit">Queue 3D analysis</button>
+          </form>
+          <div id="result-3d" class="result-panel"></div>
+          <div id="gallery-3d" class="gallery"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

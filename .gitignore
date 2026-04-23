@@ -11,3 +11,9 @@ labelImg
 YOLO_Stenosis_Detection
 .env
 yolov8m.pt
+runtime_storage/
+tools/__pycache__/
+app/__pycache__/
+frontend/__pycache__/
+temp_twod_distribution.json
+*.pyc
