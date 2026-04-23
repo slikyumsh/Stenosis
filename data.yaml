@@ -1,5 +1,0 @@
-train: C:/Users/edimv/Desktop/stenosis/data/train
-val: C:/Users/edimv/Desktop/stenosis/data/val
-test: C:/Users/edimv/Desktop/stenosis/data/test
-nc: 1 
-names: ['stenosis'] 

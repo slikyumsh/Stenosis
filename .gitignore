@@ -17,3 +17,13 @@ app/__pycache__/
 frontend/__pycache__/
 temp_twod_distribution.json
 *.pyc
+images_diplom/
+samples1/
+load_test_*.json
+load_test_*.md
+*_page.txt
+introduction.txt
+conclusion.txt
+literature.txt
+todo.txt
+*.ipynb

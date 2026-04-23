@@ -1,97 +1,49 @@
+# Stenosis Service
 
-# Детекция Стеноза в Коронарных Артериях с Использованием YOLO
+This repository contains the service layer for local coronary stenosis analysis.
 
-Этот проект направлен на обнаружение стеноза (сужения кровеносных сосудов) в коронарных артериях с помощью модели YOLO (You Only Look Once) для детекции объектов. Датасет включает медицинские изображения и аннотации областей стеноза. Аннотации конвертируются в формат YOLO для возможности обучения модели.
+## Included components
 
-## Структура Проекта
+- `app/` - FastAPI backend, 2D node service, Kafka-based 3D worker, storage and metrics
+- `frontend/` - lightweight web UI
+- `monitoring/` - Prometheus and Grafana provisioning
+- `infra/` - nginx config for 2D upstream routing
+- `docker-compose.yml` - local stack
+- `Dockerfile` - service image build
+- `requirements.app.txt` - runtime dependencies
+- `best.onnx` - 2D model artifact tracked with Git LFS
 
-Директория проекта организована следующим образом:
+## Features
 
-```
-STENOSIS
-├── .vscode/               # Настройки VS Code
-├── data/
-│   ├── train/             # Обучающие изображения и аннотации в формате YOLO
-│   └── val/               # Валидирующие изображения и аннотации в формате YOLO
-├── dataset/               # Оригинальный датасет с изображениями и XML аннотациями
-├── runs/
-│   └── detect/
-│       ├── train/         # Результаты обучения YOLO
-│       └── train2/        # Результаты второго запуска обучения
-├── tools/                 # Скрипты для обработки данных
-│   ├── create_YOLO.py     # Скрипт для конвертации аннотаций в формат YOLO
-│   ├── process_data.py    # Основной скрипт для обработки данных
-│   ├── resize_images.py   # Скрипт для изменения размера изображений
-│   └── split_data.py      # Скрипт для разделения данных на train и val
-├── venv/                  # Виртуальное окружение Python
-├── .gitignore             # Файл .gitignore
-├── data.yaml              # Конфигурационный файл YOLOv8
-├── README.md              # Документация проекта
-├── requirements.txt       # Зависимости Python
-└── yolov8n.pt             # Веса модели YOLOv8
-```
+- synchronous 2D analysis through dedicated 2D nodes
+- round-robin balancing across multiple 2D nodes
+- optional artifact rendering for faster 2D responses
+- asynchronous 3D processing through Kafka and worker services
+- local file storage for uploads and inference artifacts
+- Prometheus metrics and Grafana dashboards
+- custom and academic drift metrics for 2D inputs
 
-## Настройка
+## Local run
 
-1. **Клонирование репозитория**: Склонируйте данный репозиторий на ваш локальный компьютер.
-2. **Установка зависимостей**: Установите необходимые пакеты в виртуальное окружение.
-
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # В Windows используйте: venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
-
-3. **Подготовка данных**: Используйте `process_data.py` для подготовки датасета — изменения размера изображений, конвертации аннотаций и разделения на train и val.
-
-   ```bash
-   python tools/process_data.py
-   ```
-
-   Этот скрипт создаст директории `data/train` и `data/val` с измененными изображениями и аннотациями в формате YOLO.
-
-4. **Конфигурация файла данных**: Обновите `data.yaml`, указав пути к обучающим и валидирующим данным:
-
-   ```yaml
-   train: data/train  # Путь к обучающим данным
-   val: data/val      # Путь к валидирующим данным
-   nc: 2              # Количество классов (1 класс для стеноза)
-   names: ['0', 'object']  # Названия классов
-   ```
-
-## Обучение Модели
-
-После подготовки данных вы можете запустить обучение модели YOLO, используя YOLOv8. Убедитесь, что файл с весами `yolov8n.pt` находится в директории проекта.
-
-1. **Запуск обучения**:
-
-   ```bash
-   yolo train data=data.yaml model=yolov8n.pt epochs=100 imgsz=800
-   ```
-
-   Эта команда запускает обучение модели на подготовленном датасете на 100 эпох с изображениями размером 800x800 пикселей.
-
-2. **Результаты обучения**: Результаты обучения будут сохранены в `runs/detect/train` по умолчанию. Каждый запуск обучения создает новую директорию в `runs/detect` для сохранения результатов.
-
-## Инференс и Оценка
-
-После обучения используйте следующую команду для выполнения инференса на новых изображениях или для оценки модели на валидационном наборе данных.
+Use Docker Compose:
 
 ```bash
-yolo detect model=runs/detect/train/weights/best.pt source=data/val
+docker compose up --build -d
 ```
 
-Эта команда использует лучшие веса модели из обучения для обнаружения стеноза на изображениях из валидационного набора.
+Main endpoints:
 
-## Заметки
+- `http://localhost:8080` - frontend
+- `http://localhost:8000/docs` - backend API docs
+- `http://localhost:9090` - Prometheus
+- `http://localhost:3000` - Grafana
 
-- **Формат аннотаций**: Оригинальные XML-аннотации были конвертированы в формат YOLO, и все ограничивающие рамки имеют класс 0 (Стеноз).
-- **Изменение размера изображений**: Все изображения были приведены к размеру 800x800 пикселей для стандартизации входных данных для YOLO.
-- **Разделение данных**: Датасет был разделен на обучающую (80%) и валидационную (20%) выборки.
+Default Grafana credentials:
 
-## Зависимости
+- user: `admin`
+- password: `admin`
 
-- Python 3.8+
-- Зависимости, указанные в `requirements.txt` (например, `Pillow`, `pyyaml`, `ultralytics`)
+## Notes
 
----
+- The repository intentionally excludes thesis files, example images, old training scripts and generated benchmark outputs.
+- Runtime artifacts are stored under `runtime_storage/` and are ignored by git.
