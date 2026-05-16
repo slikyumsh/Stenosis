@@ -27,3 +27,21 @@ conclusion.txt
 literature.txt
 todo.txt
 *.ipynb
+
+# Thesis-only local materials
+_thesis_artifacts/
+
+# LaTeX sources and build artifacts
+.official-latex-styles/
+_latex_work/
+official_master_thesis_project/
+*.tex
+*.bib
+*.cls
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.toc
+*.run.xml
+missfont.log
